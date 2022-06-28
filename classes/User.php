@@ -19,5 +19,7 @@ class User
     public function setCreditCard()
     {
         $this->creditCard = new CreditCard(mt_rand(100000, 9999999), mt_rand(100, 999), '12/22');
+        $this->creditCard->setCreditCardName($this->name);
+        $this->creditCard->setCreditCardSurname($this->surname);
     }
 }
