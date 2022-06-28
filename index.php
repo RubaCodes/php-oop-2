@@ -23,6 +23,16 @@ $utenteReg = new RegisteredUser('giovanni', 'rana', 'giovanni.rana@gmail.com');
 $utenteReg->setCreditCard();
 $utenteReg->setDiscount(20);
 $utenteReg->setRegistered(true);
+
+// gestione dell'eccezione alla modifica della data di scadenza
+try {
+    $creditcard = new CreditCard(123, 123, 1 / 22);
+    $creditcard->setCreditExpireDate('5/22');
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
