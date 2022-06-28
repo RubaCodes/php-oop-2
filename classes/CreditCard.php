@@ -26,9 +26,11 @@ class CreditCard
     public function setCreditExpireDate($_expireDate)
     {
         $date = new DateTime('now');
-        $date = $date->format('m/y');
+        $date = $date->format('m/Y');
+        echo '<div>';
         echo $date;
-        if ($date > date('m/y', strtotime($_expireDate))) {
+        echo '</div>';
+        if ($date > date('m/Y', strtotime($_expireDate))) {
             throw new Exception("La carta di credito e' scaduta");
         }
         $this->expireDate = $_expireDate;
