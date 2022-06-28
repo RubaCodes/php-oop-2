@@ -16,9 +16,3 @@ class CreditCard
         $this->expireDate = $_expireDate;
     }
 }
-
-
-$testcc = new CreditCard(11231313, 123, "05/23");
-echo "<pre>";
-var_dump($testcc);
-echo "</pre>";

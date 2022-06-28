@@ -1,4 +1,7 @@
-<?php ?>
+<?php
+require_once __DIR__ . '/classes/CreditCard.php' ?>;
+
+
 <!DOCTYPE html>
 <html lang="en">
 
