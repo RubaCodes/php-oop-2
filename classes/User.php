@@ -7,6 +7,7 @@ class User
     private string $email;
     private int $discount;
     private $creditCard;
+    private bool $registered = false;
 
     function __construct(string $_name, string $_surname, string $_email, int $_discount)
     {
