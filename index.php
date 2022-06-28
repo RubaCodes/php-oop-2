@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__ . '/classes/CreditCard.php' ?>;
+require_once __DIR__ . '/classes/CreditCard.php';
+require_once __DIR__ . '/classes/Food.php';
+require_once __DIR__ . '/classes/CreditCard.php';
+?>
 
 
 <!DOCTYPE html>
