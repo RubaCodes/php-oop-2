@@ -16,7 +16,13 @@ $prodotti[1]->type = "Prodotti per l'igiene";
 $prodotti[] = new Accessory('Trespolo', 60, 5, 'Volatili');
 $prodotti[2]->category = "Accessori";
 
-
+//creazione due utenti
+$utente = new User('giovanni', 'rana', 'giovanni.rana@gmail.com');
+$utente->setCreditCard();
+$utenteReg = new RegisteredUser('giovanni', 'rana', 'giovanni.rana@gmail.com');
+$utenteReg->setCreditCard();
+$utenteReg->setDiscount(20);
+$utenteReg->setRegistered(true);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +37,7 @@ $prodotti[2]->category = "Accessori";
 <body>
     <h1>Negozio di Animali</h1>
     <pre>
-<?php var_dump($prodotti) ?>
+<?php var_dump($utente, $utenteReg) ?>
     </pre>
 </body>
 

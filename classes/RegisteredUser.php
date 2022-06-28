@@ -4,6 +4,12 @@ require_once __DIR__ . '/User.php';
 
 class RegisteredUser extends User
 {
-    private bool $registered = false;
-    private int $discount = 20;
+    public function setDiscount($_discount)
+    {
+        $this->discount = $_discount;
+    }
+    public function setRegistered(bool $_registered)
+    {
+        $this->registered = $_registered;
+    }
 }
