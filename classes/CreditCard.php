@@ -27,6 +27,7 @@ class CreditCard
     {
         $date = new DateTime('now');
         $date = $date->format('m/y');
+        echo $date;
         if ($date > date('m/y', strtotime($_expireDate))) {
             throw new Exception("La carta di credito e' scaduta");
         }
@@ -43,5 +44,9 @@ class CreditCard
     public function setCreditCircuit($_circuit)
     {
         $this->circuit = $_circuit;
+    }
+    public function getCreditCardExpireDate()
+    {
+        return $this->expireDate;
     }
 }

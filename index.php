@@ -25,15 +25,17 @@ $utenteReg->setDiscount(20);
 $utenteReg->setRegistered(true);
 
 // gestione dell'eccezione alla modifica della data di scadenza
-$creditcard = new CreditCard(123, 123, strval(mt_rand(1, 12)) . '/' . strval(mt_rand(22, 99)));
+$creditcard = new CreditCard(123, 123, strval(mt_rand(1, 12)) . '/' . strval(mt_rand(0, 99)));
 try {
-    $creditcard->setCreditExpireDate(strval(mt_rand(1, 12)) . '/' . strval(mt_rand(22, 99)));
+    $creditcard->setCreditExpireDate(strval(mt_rand(1, 12)) . '/' . strval(mt_rand(0, 99)));
+    echo $creditcard->getCreditCardExpireDate();
 } catch (Exception $e) {
+    echo $creditcard->getCreditCardExpireDate();
     echo $e->getMessage();
 }
-echo '<pre>';
-var_dump($creditcard);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($creditcard);
+// echo '</pre>';
 
 
 ?>
