@@ -23,14 +23,17 @@ class CreditCard
         $this->cvc = $_cvc;
         $this->expireDate = $_expireDate;
     }
-    public function setCreditExpireDate($_expireDate)
+    public function setCreditExpireDate(string $_expireDate)
     {
         $date = new DateTime('now');
         $date = $date->format('m/Y');
         echo '<div>';
-        echo $date;
+        //echo $date;
+        $_expireDate = DateTime::createFromFormat('m/Y', $_expireDate)->format('m/Y');
+        var_dump($_expireDate, $date);
+        var_dump($date - $_expireDate);
         echo '</div>';
-        if ($date > date('m/Y', strtotime($_expireDate))) {
+        if ($date > $_expireDate) {
             throw new Exception("La carta di credito e' scaduta");
         }
         $this->expireDate = $_expireDate;

@@ -33,9 +33,9 @@ try {
     echo $creditcard->getCreditCardExpireDate();
     echo $e->getMessage();
 }
-// echo '<pre>';
-// var_dump($creditcard);
-// echo '</pre>';
+echo '<pre>';
+var_dump($creditcard);
+echo '</pre>';
 
 
 ?>
@@ -52,7 +52,8 @@ try {
 <body>
     <h1>Negozio di Animali</h1>
     <pre>
-<?php var_dump($utente, $utenteReg) ?>
+<?php //var_dump($utente, $utenteReg) 
+?>
     </pre>
 </body>
 
