@@ -15,8 +15,16 @@ class CreditCard
 
 
 
-    function __construct(int $_number, int $_cvc, $_expireDate)
+    function __construct(int $_number, int $_cvc, string $_expireDate)
     {
+        // // funziona anche sul costruttore
+        // $date = new DateTime('now');
+        // $_expireDate = DateTime::createFromFormat('m/Y', $_expireDate);
+
+        // if ($date > $_expireDate) {
+        //     throw new Exception("La carta di credito e' scaduta");
+        // }
+        //$this->expireDate = $_expireDate->format('m/Y');
 
         $this->number = $_number;
         $this->cvc = $_cvc;
@@ -27,11 +35,6 @@ class CreditCard
         $date = new DateTime('now');
         $_expireDate = DateTime::createFromFormat('m/Y', $_expireDate);
 
-        // echo '<pre>';
-        // //echo ($date->format('m/Y'));
-        // var_dump($_expireDate/*->format('m/Y')*/, $date/*->format('m/Y'))*/);
-        // var_dump($date > $_expireDate);
-        // echo '</pre>';
         if ($date > $_expireDate) {
             throw new Exception("La carta di credito e' scaduta");
         }
