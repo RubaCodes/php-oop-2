@@ -27,7 +27,7 @@ $utenteReg->setRegistered(true);
 // gestione dell'eccezione alla modifica della data di scadenza
 $creditcard = new CreditCard(123, 123, strval(mt_rand(1, 12)) . '/' . strval(mt_rand(2000, 2037)));
 try {
-    $creditcard->setCreditExpireDate(strval(mt_rand(1, 12)) . '/' . strval(mt_rand(2000, 2037)));
+    $creditcard->setCreditExpireDate('1/2022'/*strval(mt_rand(1, 12)) . '/' . strval(mt_rand(2000, 2037))*/);
     echo $creditcard->getCreditCardExpireDate();
 } catch (Exception $e) {
     echo $creditcard->getCreditCardExpireDate();
@@ -52,7 +52,7 @@ echo '</pre>';
 <body>
     <h1>Negozio di Animali</h1>
     <pre>
-<?php //var_dump($utente, $utenteReg) 
+<?php //var_dump($utente, $utenteReg)
 ?>
     </pre>
 </body>
