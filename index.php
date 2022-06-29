@@ -25,17 +25,18 @@ $utenteReg->setDiscount(20);
 $utenteReg->setRegistered(true);
 
 // gestione dell'eccezione alla modifica della data di scadenza
-$creditcard = new CreditCard(123, 123, strval(mt_rand(1, 12)) . '/' . strval(mt_rand(2000, 2037)));
-try {
-    $creditcard->setCreditExpireDate('1/2022'/*strval(mt_rand(1, 12)) . '/' . strval(mt_rand(2000, 2037))*/);
-    echo $creditcard->getCreditCardExpireDate();
-} catch (Exception $e) {
-    echo $creditcard->getCreditCardExpireDate();
-    echo $e->getMessage();
-}
-echo '<pre>';
-var_dump($creditcard);
-echo '</pre>';
+// $creditcard = new CreditCard(123, 123, strval(mt_rand(1, 12)) . '/' . strval(mt_rand(2000, 2037)));
+// try {
+//     $dateToTry = '12/2022';
+//     echo $dateToTry;
+//     $creditcard->setCreditExpireDate($dateToTry);
+// } catch (Exception $e) {
+//     echo $creditcard->getCreditCardExpireDate();
+//     echo $e->getMessage();
+// }
+// echo '<pre>';
+// var_dump($creditcard);
+// echo '</pre>';
 
 
 ?>
@@ -50,9 +51,23 @@ echo '</pre>';
 </head>
 
 <body>
+
+    <h3>Carta di Credito test Exception</h3>
+    <?php
+    $creditcard = new CreditCard(123, 123, strval(mt_rand(1, 12)) . '/' . strval(mt_rand(2000, 2037)));
+    try {
+        $dateToTry = '11/2022';
+        echo $dateToTry;
+        $creditcard->setCreditExpireDate($dateToTry);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    echo '<pre>';
+    var_dump($creditcard);
+    echo '</pre>'; ?>
     <h1>Negozio di Animali</h1>
     <pre>
-<?php //var_dump($utente, $utenteReg)
+<?php var_dump($utente, $utenteReg)
 ?>
     </pre>
 </body>

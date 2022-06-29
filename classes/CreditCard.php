@@ -27,11 +27,11 @@ class CreditCard
         $date = new DateTime('now');
         $_expireDate = DateTime::createFromFormat('m/Y', $_expireDate);
 
-        echo '<pre>';
-        //echo ($date->format('m/Y'));
-        var_dump($_expireDate/*->format('m/Y')*/, $date/*->format('m/Y'))*/);
-        var_dump($date > $_expireDate);
-        echo '</pre>';
+        // echo '<pre>';
+        // //echo ($date->format('m/Y'));
+        // var_dump($_expireDate/*->format('m/Y')*/, $date/*->format('m/Y'))*/);
+        // var_dump($date > $_expireDate);
+        // echo '</pre>';
         if ($date > $_expireDate) {
             throw new Exception("La carta di credito e' scaduta");
         }
